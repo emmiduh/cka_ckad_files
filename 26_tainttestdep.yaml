@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: tainttestdep
+  name: tainttestdep
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: tainttestdep
+  template:
+    metadata:
+      labels:
+        app: tainttestdep
+    spec:
+      containers:
+      - image: httpd:latest
+        name: httpd
+      tolerations:
+        - key: company
+          operator: Equal
+          value: thinknxy
+          effect: NoSchedule
