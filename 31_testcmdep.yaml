@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: testcmdep
+  name: testcmdep
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: testcmdep
+  template:
+    metadata:
+      labels:
+        app: testcmdep
+    spec:
+      containers:
+      - image: nginx
+        name: nginx
+        volumeMounts:
+          - name: cmdemo
+            mountPath: /var/www/html/
+      volumes:
+        - name: cmdemo
+          configMap:
+            name: testcm
