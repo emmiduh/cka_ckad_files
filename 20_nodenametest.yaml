@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: nodenametest
+  name: nodenametest
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nodenametest
+  template:
+    metadata:
+      labels:
+        app: nodenametest
+    spec:
+      containers:
+      - image: nginx
+        name: nginx
+      nodeName: eoi-master

@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: nodeaffinitytest
+  name: nodeaffinitytest
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nodeaffinitytest
+  template:
+    metadata:
+      labels:
+        app: nodeaffinitytest
+    spec:
+      containers:
+      - image: nginx
+        name: nginx
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+              - matchExpressions:
+                - operator: In
+                  key: environment
+                  values: 
+                    - production
+                  

@@ -1,0 +1,7 @@
+apiVersion: v1
+data:
+  POSTGRES_PASSWORD: pass123
+kind: ConfigMap
+metadata:
+  creationTimestamp: null
+  name: myconfigmap

@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: recreate
+  name: recreate
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: recreate
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: recreate
+    spec:
+      containers:
+      - image: yogeshraheja/devopsinaction:v1
+        name: devopsinaction
+        resources: {}
