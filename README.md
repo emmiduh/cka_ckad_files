@@ -4,7 +4,7 @@ This repository contains Kubernetes configuration files I created for various us
 
 ## Prerequisites
 
-Ensure that you have a kubernetes cluster made up of at least one worker node and a master node, and the following installed:
+Ensure that you have a kubernetes cluster made up of at least two worker nodes and a master node, and the following installed:
 
 - [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/) (Kubernetes CLI)
 - [Kubernetes cluster](https://kubernetes.io/docs/setup/)
