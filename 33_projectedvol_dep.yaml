@@ -29,7 +29,7 @@ spec:
                   name: projectedsecret
                   items:
                     - key: password
-                      path: authentication/mypassowrd
+                      path: authentication/mypassword
               - configMap:
                   name: projectedcm
                   items:
