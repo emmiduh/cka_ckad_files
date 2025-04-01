@@ -21,10 +21,12 @@ Ensure that you have a kubernetes cluster made up of at least one worker node an
    kubectl apply -f 01_deployment.yaml
 
 2. **Inspect Resources:**
+
     kubectl get deployments
     kubectl get services
     kubectl get pods
 
 
 3. **Delete Resources:**
+
     kubectl delete -f <file_name>.yaml
